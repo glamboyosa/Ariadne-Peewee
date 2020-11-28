@@ -11,7 +11,7 @@ from models.genre import *
 from models.book import *
 db.connect()
 # the line below creates maps entities to tables but I used PWIZ to map existing DB tables to code
-#db.create_tables([User, Genre, Book])
+db.create_tables([User, Genre, Book])
 schema = make_executable_schema(type_defs, [BookQuery,HelloQuery, GenreQuery, GenreMutation, BookMutation])
 app = GraphQL(schema, debug=True)
 # def demo_function(word: str, union: Union[int, str]) -> str:
